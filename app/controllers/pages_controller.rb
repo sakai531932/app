@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   def done
   end
   
+  def notice
+    @user = User.find(params[:user_id])
+  end
+  
 end

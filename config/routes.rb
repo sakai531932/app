@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'pages/index2' => 'pages#index2', as: 'index2_page'
   
   get 'pages/done' => 'pages#done', as: 'done_page'
+  
+  get 'pages/notice/:user_id' => 'pages#notice', as: 'notice_page'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :profiles
   

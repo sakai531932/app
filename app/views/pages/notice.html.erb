@@ -1,0 +1,7 @@
+<div class="talk-list-wrapper" >
+  <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
+    <div>
+      <p><%= user.name %>さんがあなたを購入しました！Amazonギフト券300円が一週間程度で<%= current_user.email %>に送られます！</p>
+    </div>
+  <% end %>　　
+</div>

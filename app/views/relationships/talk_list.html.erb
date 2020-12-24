@@ -2,18 +2,19 @@
   <h2>あなたが購入した人の一覧</h2>
   <% @user.following_user.where.not(id: current_user.id).each do |user| %>
   <div class="talk_list">
-    <%= user.email %> 
-    <%= link_to "GO TO TALKROOM!", messages_path(followed_id: user.id), method: :get %>
+    <%= user.name %> 
+    <%= link_to "会話する", messages_path(followed_id: user.id), method: :get %>
                                 <%# new_message_path(followed_id: user.id), method: :get %>
   </div>  
   <% end %>
   <h2>あなたを購入してくれた人の一覧</h2>
-  
-  <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
-    <div class="talk_list">
-      <%= user.email %>
-      <%= link_to "GO TO TALKROOM!", index1_messages_path(follower_id: user.id), method: :get %>
+  <% if current_user.certify? %>
+    <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
+      <div class="talk_list">
+        <%= user.name %>
+        <%= link_to "会話する", index1_messages_path(follower_id: user.id), method: :get %>
                                 <%# new1_message_path(follower_id: user.id), method: :get %>
-    </div>  
+      </div>  
+    <% end %>
   <% end %>
 </div>  

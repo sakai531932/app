@@ -32,7 +32,10 @@
               <%= link_to "TALK-LIST", {controller: :relationships, action: :talk_list, user_id: current_user.id}, method: :get %>
             </span>
             <span>
-              <% if @profile.present? %>
+              <%= link_to "お知らせ", {controller: :pages, action: :notice, user_id: current_user.id}, method: :get %>
+            </span>
+            <span>
+              <% if @profile.present? and current_user.certify? %>
                 <%= link_to edit_profile_path(current_user.id) do %>
                   <%= image_tag "icons/edit.jpeg" %>
                 <% end %>
