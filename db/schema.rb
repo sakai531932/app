@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_092155) do
+ActiveRecord::Schema.define(version: 2020_12_24_060454) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_092155) do
     t.string "picture"
     t.string "name"
     t.date "birth_date"
+    t.boolean "certify", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
