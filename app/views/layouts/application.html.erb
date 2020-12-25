@@ -20,7 +20,11 @@
       <div class="container">
         <% if user_signed_in? %>
           <%= link_to index2_page_path do %>
-            <span><%= image_tag "picks_logo.png", class: "navbar-brand" %></span>
+            <span><%= image_tag "testes.jpg", class: "navbar-brand" %></span>
+          <% end %>
+        <% else %>
+          <%= link_to root_path do %>
+            <span><%= image_tag "testes.jpg", class: "navbar-brand" %></span>
           <% end %>
         <% end %>
         <div class="nav navbar-nav navbar-right">
